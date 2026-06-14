@@ -1,0 +1,6 @@
+{
+  "name": "Pizarra Táctica de Baloncesto",
+  "description": "Diseña, edita y reproduce jugadas tácticas de baloncesto con animación fluida en tiempo real y asistencia de Inteligencia Artificial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
