@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #0F1115;
+  --color-brand-panel: #1A1D23;
+  --color-brand-accent: #FF6B00;
+  --color-brand-accent-glow: rgba(255, 107, 0, 0.3);
+  --color-brand-text-dim: #94A3B8;
+  --color-brand-text-bright: #F8FAFC;
+  --color-brand-border: #2D333D;
+  --color-brand-court-line: #475569;
+  --color-brand-court-bg: #15181C;
+  --font-sans: "Helvetica Neue", Arial, sans-serif, system-ui;
+}
+
+body {
+  background-color: #0F1115;
+  color: #F8FAFC;
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #111827 !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif !important;
+  }
+  
+  /* Universal class to hide elements during printing */
+  .print-hidden,
+  header, 
+  footer, 
+  button, 
+  select, 
+  input, 
+  textarea,
+  #play-metadata-cards,
+  #playbook-presets-panel,
+  #player-anchoring-panel,
+  #animation-sequence-timeline,
+  #btn-toggle-sidebar,
+  [id^="btn-"],
+  label,
+  .scrollbar-thin {
+    display: none !important;
+  }
+
+  /* Set parent containers to transparent backgrounds and clear spacing */
+  div, main, section {
+    background: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Force the whiteboard to be a stark white background with dark markings */
+  #tactical-board {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 3px solid #111827 !important;
+    border-radius: 12px !important;
+    margin: 1.5rem auto !important;
+    max-height: 480px !important;
+    width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  /* Hide raw parquet patterns and gradients during printing */
+  #tactical-board rect[fill^="url(#court"] {
+    fill: #ffffff !important;
+  }
+  #tactical-board rect[fill^="url(#parquet"] {
+    display: none !important;
+  }
+  
+  /* Override court floor painted lines from white to thick solid black */
+  #tactical-board rect, 
+  #tactical-board line, 
+  #tactical-board path {
+    stroke: #111827 !important;
+  }
+
+  /* Style player nodes to be extremely sharp and readable with black ink */
+  #tactical-board circle {
+    stroke: #111827 !important;
+    stroke-width: 1.5px !important;
+  }
+  
+  /* Fill ball carriers (O) with solid stark contrast white and black borders */
+  #tactical-board circle[fill="#ffffff"] {
+    fill: #ffffff !important;
+  }
+
+  /* Ensure defenders' red X and other texts print beautifully in solid dark text */
+  #tactical-board text {
+    fill: #111827 !important;
+    font-weight: 900 !important;
+  }
+
+  /* Format the coaching fiche printable summary card cleanly */
+  .print-only-card {
+    display: block !important;
+    position: relative !important;
+    border: 2px solid #111827 !important;
+    padding: 1.5rem !important;
+    background-color: #f9fafb !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    margin-bottom: 2rem !important;
+  }
+}

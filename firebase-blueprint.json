@@ -1,0 +1,36 @@
+{
+  "entities": {
+    "plays": {
+      "title": "Tactical Plays",
+      "description": "Shared tactical plays library synchronized across devices",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "courtType": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array"
+        },
+        "drawings": {
+          "type": "array"
+        },
+        "category": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "name", "courtType", "steps"]
+    }
+  }
+}
